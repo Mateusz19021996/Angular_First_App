@@ -3,12 +3,13 @@ import { Task } from '../../Task';
 import { TASKS } from '../mock-tasks';
 import { TaskService } from 'src/app/services/task.service';
 
+
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css']
 })
-export class TasksComponent implements OnInit {
+export class TasksComponent implements OnInit {  
 
   tasks:Task[] = [];
 
@@ -19,4 +20,8 @@ export class TasksComponent implements OnInit {
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks)); // ?????
   }
 
+  deleteTask(task: Task){
+    //this.taskService.deleteTask(task1).subscribe(data => {console.log('no i co teraz')});  
+    this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter((t)=>t.id !== task.id)))   
+  }
 }
