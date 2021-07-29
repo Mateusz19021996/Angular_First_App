@@ -21,7 +21,11 @@ export class TasksComponent implements OnInit {
   }
 
   deleteTask(task: Task){
-    //this.taskService.deleteTask(task1).subscribe(data => {console.log('no i co teraz')});  
-    this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter((t)=>t.id !== task.id)))   
+    //this.taskService.deleteTask(task).subscribe(() => (console.log("that works")));  
+    this.taskService
+    .deleteTask(task)
+    .subscribe(() => (this.tasks = this.tasks.filter((t) => t.id !== task.id))) 
+    // filtruje mi wyniki aby odsiweyzlo sie odrazu ?
+
   }
 }

@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class TaskService {
 
-  private apiUrl = 'http://localhost:3000/task'
+  private apiUrl = 'http://localhost:5000/tasks'
 
   constructor(private myHttp: HttpClient) { }
 
