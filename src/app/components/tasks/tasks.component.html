@@ -1,8 +1,10 @@
 <div class="container">
     <app-task-item 
-    *ngFor = "let array of tasks" 
-    [task1] = "array" 
-    (onDeleteTaskEmit)="deleteTask(array)"></app-task-item>    
+        *ngFor = "let array of tasks" 
+        [task1] = "array" 
+        (onDeleteTaskEmit)="deleteTask(array)"
+        (onToggleReminder)="toggleReminder(array)">
+    </app-task-item>    
 </div>
 
 

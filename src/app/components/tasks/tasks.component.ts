@@ -26,6 +26,9 @@ export class TasksComponent implements OnInit {
     .deleteTask(task)
     .subscribe(() => (this.tasks = this.tasks.filter((t) => t.id !== task.id))) 
     // filtruje mi wyniki aby odsiweyzlo sie odrazu ?
-
+  }
+  
+  toggleReminder(task: Task){
+    task.reminder = !task.reminder;
   }
 }
